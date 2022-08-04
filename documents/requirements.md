@@ -4,10 +4,10 @@
 * Version control with Git and host the repository on GitHub
 * Write a plan
 * Write a README (using Markdown) that documents a project including:
-- Wireframes
-- Technologies used
-- Features
-- Future work
+-- Wireframes
+-- Technologies used
+-- Features
+-- Future work
 * Write unit tests for components using Jest and Enzyme
 * Write end-to-end tests for an application
 * Responsive design
