@@ -1,0 +1,7 @@
+.all-posts-container {
+    padding: 100px 0 0 50px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+

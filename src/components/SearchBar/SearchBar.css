@@ -1,0 +1,13 @@
+.searchInput input{
+    border-radius: 2rem;
+    border: 1px solid grey;
+    background-color: white;
+    background-image: url('../../assets/search-24.png');
+    background-position: 7px;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    padding: 5px 12px 5px 22px;
+}
+
+
+

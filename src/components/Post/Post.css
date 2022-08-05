@@ -1,0 +1,24 @@
+.down-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-button{
+    display: flex;
+    align-items: center;
+}
+
+.post-container {
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.post-container img{
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+

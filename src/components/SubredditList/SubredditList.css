@@ -1,0 +1,10 @@
+.subreddit-list-container {
+    width: 200px;
+    position: absolute; 
+    z-index: 1;
+    top: 100px;
+    right: 10px;
+    overflow-x: hidden;
+    padding: 20px;
+    border: 1px solid black;
+}
