@@ -1,16 +1,15 @@
 import "./App.css";
-import { Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Feed from "./components/Feed/Feed";
+import PostView from "./components/PostView/PostView";
 
 function App() {
   return (
     <>
       <Header />
-      <Feed />
-      {/* <Router>
-         <Switch>
-          <Route path={"/page-not-found"}>
+      <Switch>
+        {/* <Route path={"/page-not-found"}>
             <PageNotFound />
           </Route>
           <Route path={"/search"}>
@@ -24,14 +23,15 @@ function App() {
           </Route>
           <Route path={"/:filter"}>
             <Feed />
-          </Route>
-          <Route path={"/"}>
-            <Feed />
-          </Route>
-        </Switch> 
-      </Router> */}
+          </Route> */}
+        <Route exact path="/">
+          <Feed />
+        </Route>
+        <Route path="/comments">
+          <PostView />
+        </Route>
+      </Switch>
     </>
-    
   );
 }
 
