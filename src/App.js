@@ -1,10 +1,22 @@
+
+import { useDispatch } from "react-redux";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Feed from "./components/Feed/Feed";
 import PostView from "./components/PostView/PostView";
+import { loadPosts } from "./components/AllPosts/AllPostsSlice";
+import { useEffect } from "react";
+
 
 function App() {
+
+  const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    dispatch(loadPosts());
+  }, [dispatch]);
+
   return (
     <>
       <Header />
