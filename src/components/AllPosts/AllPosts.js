@@ -12,7 +12,7 @@ function AllPosts() {
     //console.log(isLoading);
     return ( 
         <div className='all-posts-container'>
-            {allPosts.map((post) => (
+            {allPosts.map((post, index) => (
                 <Post 
                     subreddit={post.data.subreddit}
                     title={post.data.title}
@@ -23,7 +23,8 @@ function AllPosts() {
                     author={post.data.author}
                     post_hint={post.data.post_hint}
                     url={post.data.url}
-                    video_src={post.data.url}
+                    video_src={post.data.secure_media !== null ? post.data.secure_media.reddit_video.fallback_url : false}
+                    key={index}
                 />
             ))}
         </div>

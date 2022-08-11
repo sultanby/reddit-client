@@ -15,7 +15,6 @@ function Post({
   url,
   video_src,
 }) {
-  console.log(image);
   return (
     <div className="post-container">
       <h5>r/{subreddit}</h5>
@@ -26,12 +25,11 @@ function Post({
       {post_hint === "hosted:video" && (
         <video width='300px' controls>
           <source
-            src={`${video_src}/DASH_1080.mp4?source=fallback`}
+            src={video_src}
             type="video/mp4"
           ></source>
         </video>
       )}
-
       <p>{votes}</p>
       <div className="down-section">
         <p>{author}</p>
