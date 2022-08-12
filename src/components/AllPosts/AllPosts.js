@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { allPosts } from '../../mocks/posts';
-import Post from "../Post/Post";
 import "./AllPosts.css";
-import { selectAllPosts } from "./AllPostsSlice";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { loadPosts } from "./AllPostsSlice";
+import { loadPosts, selectAllPosts } from "./AllPostsSlice";
+import Post from "../Post/Post";
 
 function AllPosts() {
   const allPosts = useSelector(selectAllPosts);
@@ -16,7 +13,7 @@ function AllPosts() {
   //console.log(isLoading);
 
   const params = useParams();
-  console.log(params);
+  //console.log(params);
 
   const dispatch = useDispatch();
 
