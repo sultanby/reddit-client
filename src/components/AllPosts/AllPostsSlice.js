@@ -4,12 +4,15 @@ let headers = {
     "User-Agent"   : "codecademt:go:v2.1 (by /u/sultan)"
 };
 
-let url = 'https://api.reddit.com/r/all.json'
+let urlBase = 'https://api.reddit.com/r';
+let SUBREDDIT_ALL = '/all/';
+let JSON = '.json';
+
 
 export const loadPosts = createAsyncThunk(
     'allPosts/getAllPosts',
-    async () => {
-        const data = await fetch(url, {
+    async ({params}) => {
+        const data = await fetch(urlBase + SUBREDDIT_ALL + ( params && Object.keys(params).length === 0 ? 'hot' : params.filter ) + JSON, {
             headers: headers
           });
         console.log(data);

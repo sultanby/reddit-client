@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FilterBar.css';
+
 
 function FilterBar() {
     const filters = ['hot', 'new', 'top'];
@@ -7,7 +9,9 @@ function FilterBar() {
     return ( 
         <div className='filter-bar'>
             {filters.map((filter) => 
-                <button>{filter}</button>
+                <Link to={`/${filter}`}>
+                    <button>{filter}</button>
+                </Link>
             )}
         </div>
      );
