@@ -3,18 +3,18 @@ import React, { useEffect } from "react";
 import "./AllPosts.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { loadPosts, selectAllPosts } from "./AllPostsSlice";
+import { loadPosts, selectFilteredAllPosts } from "./AllPostsSlice";
 import Post from "../Post/Post";
 import { urlHelper } from "../../utils/urlHelper";
 
 function AllPosts() {
-  const allPosts = useSelector(selectAllPosts);
+  const allPosts = useSelector(selectFilteredAllPosts);
   //console.log(allPosts);
   const { isLoading } = useSelector((state) => state.allPosts);
   //console.log(isLoading);
 
   const params = useParams();
-  console.log(params);
+  //console.log(params);
 
   const dispatch = useDispatch();
 
