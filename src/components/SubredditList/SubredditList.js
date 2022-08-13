@@ -7,17 +7,18 @@ import { selectSubredditList, loadSubredditList} from "./SubredditListSlice";
 
 function SubredditList() {
   const subredditList = useSelector(selectSubredditList);
-  console.log("subreddditList component" + subredditList);
+  //console.log("subreddditList component" + subredditList);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadSubredditList());
   }, [dispatch]);
+
   return (
     <div className="subreddit-list-container">
       <h4>Hottest Communities</h4>
       {subredditList.map((subreddit) => (
-        <Subreddit subreddit={subreddit.data.display_name} key={subreddit.data.id} />
+        <Subreddit subreddit={subreddit.data.display_name} url={subreddit.data.display_name_prefixed} key={subreddit.data.id} />
       ))}
     </div>
   );

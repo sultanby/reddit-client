@@ -11,7 +11,7 @@ export const loadSubredditList = createAsyncThunk(
         const data = await fetch('https://www.reddit.com/subreddits/popular.json', {
             headers: headers
           });
-        console.log(data);
+        //console.log(data);
         const json = await data.json();
         return json.data.children;
     }
@@ -28,18 +28,18 @@ export const subredditListSlice = createSlice({
     extraReducers: {
         [loadSubredditList.pending]: (state, action) => {
             state.isLoading = true;
-            console.log(state.subreddits);
+            //console.log(state.subreddits);
             state.hasError = false;
         },
         [loadSubredditList.fulfilled]: (state, action) => {
             state.subreddits = action.payload;
-            console.log(state.subreddits);
+            //console.log(state.subreddits);
             state.isLoading = false;
             state.hasError = false;
         },
         [loadSubredditList.rejected]: (state, action) => {
             state.isLoading = false;
-            console.log(action);
+            //console.log(action);
             state.hasError = true;
         }
     }

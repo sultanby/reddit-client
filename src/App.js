@@ -17,12 +17,12 @@ function App() {
           </Route>
           <Route path={"/r/:subreddit/comments/:id/:title"}>
             <Post />
-          </Route>
-          <Route path={"/r/:subreddit/:filter"}>
-            <Feed />
           </Route>*/}
-        <Route exact path="/comments">
-          <PostView />
+        <Route path={"/r/:subreddit/:filter"}>
+          <Feed />
+        </Route>
+        <Route path={"/r/:subreddit/"}>
+          <Feed />
         </Route>
         <Route path={"/:filter"}>
           <Feed />

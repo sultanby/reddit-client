@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Subreddit.css';
 
-function Subreddit({subreddit, key}) {
+function Subreddit({subreddit, url}) {
     return ( 
         <div className='subreddit'>
-            <a href="">{subreddit}</a>
+            <Link to={`/${url}`}>{subreddit}</Link>
         </div>
      );
 }
