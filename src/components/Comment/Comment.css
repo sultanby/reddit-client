@@ -1,0 +1,14 @@
+.comment-container {
+    border: 1px solid black;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.comment-container h6 {
+    text-align: right;
+}
+
+.author {
+    font-weight: bold;
+    font-size: 0.75rem;
+}

@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { selectSearchTerm } from '../SearchBar/SearchSlice';
 
 let headers = {
     "User-Agent"   : "codecademt:go:v2.1 (by /u/sultan)"
@@ -14,7 +13,7 @@ export const loadComments = createAsyncThunk(
           });
         //console.log(data);
         const json = await data.json();
-        return json[1].data.children;
+        return json;
     }
 );
 
@@ -22,6 +21,7 @@ export const commentsSlice = createSlice({
     name: 'allComments',
     initialState: {
         comments: [],
+        post: {},
         isLoading: false,
         hasError: false
     },
@@ -33,8 +33,10 @@ export const commentsSlice = createSlice({
             state.hasError = false;
         },
         [loadComments.fulfilled]: (state, action) => {
-            state.comments = action.payload;
-            //console.log(state.comments);
+            state.comments = action.payload[1].data.children;
+            state.post = action.payload[0].data.children[0].data;
+            console.log(state.post);
+            console.log(state.comments);
             state.isLoading = false;
             state.hasError = false;
         },
@@ -47,5 +49,6 @@ export const commentsSlice = createSlice({
 });
 
 export const selectAllComments = (state) => state.allComments.comments;
+export const selectPostInfo = (state) => state.allComments.post;
 
 export default commentsSlice.reducer;

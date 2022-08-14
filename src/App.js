@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Feed from "./components/Feed/Feed";
-import PostView from "./components/PostView/PostView";
+import Comments from "./components/Comments/Comments";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
             <PageNotFound />
           </Route>*/}
         <Route path={"/r/:subreddit/comments/:id/:title"}>
-          <PostView />
+          <Comments />
         </Route>
         <Route path={"/r/:subreddit/:filter"}>
           <Feed />

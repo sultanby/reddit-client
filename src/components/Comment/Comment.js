@@ -4,7 +4,8 @@ import './Comment.css';
 function Comment({ author, body, created }) {
   return (
     <div className='comment-container'>
-      <p>{author}: {body}</p>
+      <p className="author">{author}</p>
+      <p>{body}</p>
       <h6>{created}</h6>
     </div>
   );
