@@ -11,12 +11,12 @@ function SearchBar() {
         dispatch(setSearchTerm(e.target.value));
     };
 
-    // const onSearchClearHandler = () => {
-    //     dispatch(clearSearchTerm());
-    // };
+    const onSearchClearHandler = () => {
+        dispatch(clearSearchTerm());
+    };
 
     return ( 
-        <form className='search-container'>
+        <div className='search-container'>
             <input 
                 type='text' 
                 id='form-control' 
@@ -24,14 +24,14 @@ function SearchBar() {
                 onChange={onSearchHandler}
                 placeholder='Search in this subreddit'
             />
-            {/* {searchTerm.length > 0 && (
+            {searchTerm.length > 0 && (
                 <button
                     onClick={onSearchClearHandler}
                     type='button' 
                 >x
                 </button>
-            )} */}
-        </form>
+            )}
+        </div>
      );
 }
 

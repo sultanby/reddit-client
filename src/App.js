@@ -11,13 +11,10 @@ function App() {
       <Switch>
         {/* <Route path={"/page-not-found"}>
             <PageNotFound />
-          </Route>
-          <Route path={"/search"}>
-            <SearchPage />
-          </Route>
-          <Route path={"/r/:subreddit/comments/:id/:title"}>
-            <Post />
           </Route>*/}
+        <Route path={"/r/:subreddit/comments/:id/:title"}>
+          <PostView />
+        </Route>
         <Route path={"/r/:subreddit/:filter"}>
           <Feed />
         </Route>

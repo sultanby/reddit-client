@@ -9,7 +9,7 @@ import { urlHelper } from "../../utils/urlHelper";
 
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
-  //console.log(allPosts);
+  console.log(allPosts);
   const { isLoading } = useSelector((state) => state.allPosts);
   //console.log(isLoading);
 
@@ -38,6 +38,7 @@ function AllPosts() {
           url={post.data.url}
           video_src={post.data.secure_media?.reddit_video?.fallback_url}
           key={index}
+          comment_link={post.data.permalink}
         />
       ))}
     </div>

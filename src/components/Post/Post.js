@@ -14,6 +14,7 @@ function Post({
   post_hint,
   url,
   video_src,
+  comment_link
 }) {
   return (
     <div className="post-container">
@@ -33,7 +34,7 @@ function Post({
       <p>{votes}</p>
       <div className="down-section">
         <p>{author}</p>
-        <Link to="/comments">
+        <Link to={`${comment_link}`}>
           <button className="comment-button">
             <img src={commentLogo} />
             <p>{num_comments}</p>

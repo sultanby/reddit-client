@@ -5,7 +5,7 @@ import Post from '../Post/Post';
 function PostView() {
     return (  
     <>
-        {/* Х<Post /> */}
+        <Post />
         <Comments />
     </>
     );

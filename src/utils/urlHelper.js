@@ -11,5 +11,8 @@ export function urlHelper({params}) {
     else if(Object.keys(params).length === 2) {
         return `https://api.reddit.com/r/${params.subreddit}/${params.filter}.json`
     }
+    else if(Object.keys(params).length === 3) {
+        return `https://api.reddit.com/r/${params.subreddit}/comments/${params.id}/${params.title}.json`
+    }
     return
 }
