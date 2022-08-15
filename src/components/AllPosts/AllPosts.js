@@ -9,7 +9,7 @@ import { urlHelper } from "../../utils/urlHelper";
 
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
-  console.log(allPosts);
+  //console.log(allPosts);
   const { isLoading } = useSelector((state) => state.allPosts);
   //console.log(isLoading);
 

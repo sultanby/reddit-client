@@ -12,12 +12,12 @@ function FilterBar() {
 
   return (
     <div className="filter-bar">
-      {filters.map((filter) => {
+      {filters.map((filter, index) => {
         if (params.subreddit && path==="/r/:subreddit/") 
-          return <Link to={`${url}/${filter}`}><button>{filter}</button></Link>
+          return <Link to={`${url}/${filter}`} key={index}><button>{filter}</button></Link>
         else if (Object.keys(params).length === 2)
-            return <Link to={`/${url_help}/${filter}`}><button>{filter}</button></Link>
-        return <Link to={`/${filter}`}><button>{filter}</button></Link>
+            return <Link to={`/${url_help}/${filter}`} key={index}><button>{filter}</button></Link>
+        return <Link to={`/${filter}`} key={index}><button>{filter}</button></Link>
     })}
     </div>
   );
