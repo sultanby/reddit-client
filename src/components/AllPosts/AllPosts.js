@@ -39,6 +39,8 @@ function AllPosts() {
           video_src={post.data.secure_media?.reddit_video?.fallback_url}
           key={index}
           comment_link={post.data.permalink}
+          created={post.data.created}
+          isSinglePost={false}
         />
       ))}
     </div>

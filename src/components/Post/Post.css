@@ -15,7 +15,8 @@
     padding: 30px;
 }
 
-.post-container img{
+.post-container img, 
+.post-container video{
     display: block;
     max-width: 50%;
     height: auto;

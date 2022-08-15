@@ -25,6 +25,7 @@ function Comments() {
     dispatch(loadComments(url));
   }, [dispatch, params]);
 
+
   return (
     <div>
       <Post 
@@ -39,6 +40,8 @@ function Comments() {
         url={postInfo.url}
         video_src={postInfo.secure_media?.reddit_video?.fallback_url}
         comment_link={postInfo.permalink}
+        isSinglePost={true}
+        created={postInfo.created}
     />
       <div className="comments-container">
         {comments.map((comment) => (
