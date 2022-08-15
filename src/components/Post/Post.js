@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import commentLogo from "../../assets/comments-24.png";
 import { timeConverter } from "../../utils/timeConverter";
+import { voteCounter } from "../../utils/votes";
 import "./Post.css";
 
 function Post({
@@ -20,6 +21,7 @@ function Post({
   created
 }) {
   let time = timeConverter(created);
+  let voteRounded = voteCounter(votes);
   return (
     <div className="post-container">
       <h5>r/{subreddit}</h5>
@@ -31,7 +33,7 @@ function Post({
           <source src={video_src} type="video/mp4"></source>
         </video>
       )}
-      <p>{votes}</p>
+      <p>{voteRounded}</p>
       <div className="down-section">
         <p>{author}</p>
         <p>{time}</p>
