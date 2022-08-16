@@ -2,10 +2,11 @@ import React from 'react';
 import AllPosts from '../AllPosts/AllPosts';
 import FilterBar from '../FilterBar/FilterBar';
 import SubredditList from '../SubredditList/SubredditList';
+import './Feed.css'
 
 function Feed() {
     return ( 
-        <div>
+        <div id='home-grid'>
             <FilterBar />
             <AllPosts />
             <SubredditList />

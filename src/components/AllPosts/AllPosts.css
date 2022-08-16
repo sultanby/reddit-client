@@ -1,8 +1,9 @@
 .all-posts-container {
-    padding: 160px 0 0 150px;
+    /* padding: 160px 0 0 150px; */
     display: flex;
     flex-direction: column;
-    width: 60%;
+    grid-area: main;
+    /* width: 60%; */
 }
 
 .loader {

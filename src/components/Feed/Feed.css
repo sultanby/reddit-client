@@ -1,0 +1,12 @@
+#home-grid {
+    display: grid;
+    width: 70%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'filter sidebar'
+    'main sidebar';
+    grid-gap: 30px;
+    margin: 0 auto;
+    padding-top: 90px;
+}

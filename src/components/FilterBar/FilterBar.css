@@ -1,13 +1,14 @@
 .filter-bar {
-    width: 60%;
+    /* width: 60%;
     position: absolute; 
     top: 100px;
-    left: 150px;
+    left: 150px; */
     overflow-x: hidden;
     padding: 5px 0;
     border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
+    grid-area: filter;
 }
 
 .filter-bar button {
