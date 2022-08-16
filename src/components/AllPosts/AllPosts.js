@@ -22,6 +22,12 @@ function AllPosts() {
     let url = urlHelper({ params });
     dispatch(loadPosts(url));
   }, [dispatch, params]);
+  
+  if (isLoading) {
+    return (
+      <span className="loader"></span>
+    )
+  }
 
   return (
     <div className="all-posts-container">

@@ -1,7 +1,6 @@
 .filter-bar {
     width: 60%;
     position: absolute; 
-    z-index: 1;
     top: 100px;
     left: 150px;
     overflow-x: hidden;

@@ -33,7 +33,7 @@ function Post({
           <source src={video_src} type="video/mp4"></source>
         </video>
       )}
-      <p>{voteRounded}</p>
+      <p>{voteRounded}</p> 
       <div className="down-section">
         <p>{author}</p>
         <p>{time}</p>

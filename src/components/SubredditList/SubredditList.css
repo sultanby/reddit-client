@@ -1,7 +1,6 @@
 .subreddit-list-container {
     width: 200px;
     position: absolute; 
-    z-index: 1;
     top: 100px;
     right: 100px;
     overflow-x: hidden;

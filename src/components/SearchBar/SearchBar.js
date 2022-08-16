@@ -2,6 +2,7 @@ import React from 'react';
 import './SearchBar.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectSearchTerm, setSearchTerm, clearSearchTerm } from './SearchSlice';
+import clear from "../../assets/cancel-24.png";
 
 function SearchBar() {
     const dispatch = useDispatch();
@@ -22,14 +23,11 @@ function SearchBar() {
                 id='form-control' 
                 value={searchTerm}
                 onChange={onSearchHandler}
-                placeholder='Search in this subreddit'
+                placeholder='Search'
+                
             />
             {searchTerm.length > 0 && (
-                <button
-                    onClick={onSearchClearHandler}
-                    type='button' 
-                >x
-                </button>
+                <img src={clear} id='clear-button' onClick={onSearchClearHandler} type='button'></img>
             )}
         </div>
      );
