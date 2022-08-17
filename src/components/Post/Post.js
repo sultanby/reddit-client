@@ -53,35 +53,50 @@ function Post({
   return (
     <div className="post-container">
       <span className="votes-sidepanel">
-        <img src={upVote ? upPushed : up} onClick={changeUpVote} alt="up vote button"/>
+        <img
+          src={upVote ? upPushed : up}
+          onClick={changeUpVote}
+          alt="up vote button"
+        />
         <div>{voteRounded}</div>
-        <img src={downVote ? downPushed : down} onClick={changeDownVote} alt="down vote button"/>
+        <img
+          src={downVote ? downPushed : down}
+          onClick={changeDownVote}
+          alt="down vote button"
+        />
       </span>
       <div className="post-main">
-        <h6>r/{subreddit}</h6>
+        <h6>
+          <Link to={`r/${subreddit}`}>r/{subreddit}</Link>
+        </h6>
         <h3>{title}</h3>
-        <div class='post-content'>
-          {post_hint === "image" && <img src={image} alt={title}/>}
+        <div class="post-content">
+          {post_hint === "image" && <img src={image} alt={title} />}
           {post_hint === "link" && <a href={url}>{url}</a>}
           {post_hint === "hosted:video" && (
             <video width="300px" controls>
               <source src={video_src} type="video/mp4"></source>
             </video>
           )}
-          {isSelf && <Markdown>{selftext}</Markdown>}
+
+          {isSelf && (
+            <div className="post-main-text">
+              <Markdown>{selftext}</Markdown>
+            </div>
+          )}
         </div>
         <div className="down-section">
           <h6> by {author}</h6>
           <h6>{time}</h6>
           {isSinglePost ? (
             <div className="comment-button">
-              <img src={commentLogo} alt="comment icon"/>
+              <img src={commentLogo} alt="comment icon" />
               <h6>{num_comments}</h6>
             </div>
           ) : (
             <Link to={`${comment_link}`}>
               <div className="comment-button">
-                <img src={commentLogo} alt="comment icon"/>
+                <img src={commentLogo} alt="comment icon" />
                 <h6>{num_comments}</h6>
               </div>
             </Link>
