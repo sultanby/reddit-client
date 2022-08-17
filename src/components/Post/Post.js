@@ -27,40 +27,32 @@ function Post({
   isSelf,
   selftext,
 }) {
-  const [upVote, setUpVote] = useState(false);
-  const [downVote, setDownVote] = useState(false);
+  const [addend, setAddend] = useState(0);
 
   const changeUpVote = () => {
-    if (!upVote) {
-      setUpVote(true);
-      setDownVote(false);
-    } else {
-      setUpVote(false);
-      setDownVote(false);
-    }
-  };
+    setAddend(prevAddend => (
+      prevAddend === 1 ? 0: addend+1))
+  }
+
   const changeDownVote = () => {
-    if (!downVote) {
-      setDownVote(true);
-      setUpVote(false);
-    } else {
-      setDownVote(false);
-      setUpVote(false);
-    }
-  };
+    setAddend(prevAddend => (
+      prevAddend === -1 ? 0: addend-1))
+  }
+
   let time = timeConverter(created);
-  let voteRounded = voteCounter(votes);
+  let voteRounded = voteCounter(votes+addend);
+  
   return (
     <div className="post-container">
       <span className="votes-sidepanel">
         <img
-          src={upVote ? upPushed : up}
-          onClick={changeUpVote}
+          src={addend > 0 ? upPushed : up}
+          onClick={(changeUpVote)}
           alt="up vote button"
         />
         <div>{voteRounded}</div>
         <img
-          src={downVote ? downPushed : down}
+          src={addend < 0 ? downPushed : down}
           onClick={changeDownVote}
           alt="down vote button"
         />
