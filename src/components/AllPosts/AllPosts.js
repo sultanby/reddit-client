@@ -9,7 +9,7 @@ import { urlHelper } from "../../utils/urlHelper";
 
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
-  //console.log(allPosts);
+  console.log(allPosts);
   const { isLoading } = useSelector((state) => state.allPosts);
   //console.log(isLoading);
 
@@ -47,6 +47,8 @@ function AllPosts() {
           comment_link={post.data.permalink}
           created={post.data.created}
           isSinglePost={false}
+          isSelf={post.data.is_self}
+          selftext={post.data.selftext}
         />
       ))}
     </div>

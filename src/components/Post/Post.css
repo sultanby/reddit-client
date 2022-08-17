@@ -1,7 +1,13 @@
+
 .down-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
+}
+
+.down-section h6{
+    color: gray;
 }
 
 .comment-button{
@@ -9,17 +15,50 @@
     align-items: center;
 }
 
+.comment-button img{
+    width: 18px;
+    padding-right: 2px;
+}
+
 .post-container {
     border: 1px solid gray;
     margin-bottom: 20px;
-    padding: 30px;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .post-container img, 
 .post-container video{
     display: block;
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
     margin: 0 auto;
+}
+
+.votes-sidepanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid gray;
+    width: 35px;
+}
+
+.votes-sidepanel div{
+    padding: 5px 0;
+    font-size: 0.7rem;
+    width: 35px;
+    text-align: center;
+}
+
+.post-main {
+    padding: 15px;
+    width: 100%;
+}
+
+.post-main h3{
+    padding: 15px 0;
 }
 
