@@ -5,7 +5,7 @@ import Markdown from "markdown-to-jsx";
 
 
 function Comment({ author, body, created }) {
-  let time = timeConverter(created)
+  let time = timeConverter(created);
   return (
     <div className='comment-container'>
       <p className="author">{author}</p>

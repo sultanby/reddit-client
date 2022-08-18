@@ -59,7 +59,7 @@ function Post({
       </span>
       <div className="post-main">
         <h6>
-          <Link to={`r/${subreddit}`}>r/{subreddit}</Link>
+          <Link to={`/${subreddit}`}>{subreddit}</Link>
         </h6>
         <h3>{title}</h3>
         <div className="post-content">
@@ -71,7 +71,7 @@ function Post({
             </video>
           )}
 
-          {isSelftext && (
+          {isSelftext && selftext.length>0 && (
             <div className={isSinglePost ? "post-main-text-comments": "post-main-text-feed"}>
               <Markdown>{selftext}</Markdown>
             </div>

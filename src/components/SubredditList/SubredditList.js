@@ -7,7 +7,7 @@ import { selectSubredditList, loadSubredditList} from "./SubredditListSlice";
 
 function SubredditList() {
   const subredditList = useSelector(selectSubredditList);
-  //console.log("subreddditList component" + subredditList);
+  //console.log(subredditList);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,11 +1,11 @@
 .subreddit-list-container {
-    /* width: 200px;
-    position: absolute; 
-    top: 100px;
-    right: 100px; */
     overflow-x: hidden;
     padding: 20px;
     border: 1px solid black;
     grid-area: sidebar;
     height: 800px;
+}
+
+.subreddit-list-container h4 {
+    padding-bottom: 20px;
 }

@@ -33,7 +33,7 @@ function AllPosts() {
     <div className="all-posts-container">
       {allPosts.map((post, index) => (
         <Post
-          subreddit={post.data.subreddit}
+          subreddit={post.data.subreddit_name_prefixed}
           title={post.data.title}
           image={post.data.url}
           num_comments={post.data.num_comments}

@@ -7,9 +7,12 @@
 
 .comment-container h6 {
     text-align: right;
+    padding-top: 5px;
+    color: gray;
 }
 
 .author {
     font-weight: bold;
     font-size: 0.75rem;
+    padding-bottom: 10px;
 }
