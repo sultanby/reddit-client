@@ -36,9 +36,13 @@
     margin: 0 auto;
 }
 
-.post-main-text {
+.post-main-text-feed {
     overflow: hidden;
     height: 50px;
+}
+
+.post-main-text-comments {
+    
 }
 
 .post-container {

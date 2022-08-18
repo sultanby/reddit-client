@@ -5,8 +5,6 @@ import hotIcon from '../../assets/flame-24.png';
 import newIcon from '../../assets/new-24.png';
 import topIcon from '../../assets/top-24.png';
 
-
-
 function FilterBar() {
   const filters = [
     {

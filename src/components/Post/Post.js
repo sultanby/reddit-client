@@ -24,7 +24,7 @@ function Post({
   comment_link,
   isSinglePost,
   created,
-  isSelf,
+  isSelftext,
   selftext,
 }) {
   const [addend, setAddend] = useState(0);
@@ -41,9 +41,9 @@ function Post({
 
   let time = timeConverter(created);
   let voteRounded = voteCounter(votes+addend);
-  
+
   return (
-    <div className="post-container">
+    <article className="post-container">
       <span className="votes-sidepanel">
         <img
           src={addend > 0 ? upPushed : up}
@@ -62,7 +62,7 @@ function Post({
           <Link to={`r/${subreddit}`}>r/{subreddit}</Link>
         </h6>
         <h3>{title}</h3>
-        <div class="post-content">
+        <div className="post-content">
           {post_hint === "image" && <img src={image} alt={title} />}
           {post_hint === "link" && <a href={url}>{url}</a>}
           {post_hint === "hosted:video" && (
@@ -71,8 +71,8 @@ function Post({
             </video>
           )}
 
-          {isSelf && (
-            <div className="post-main-text">
+          {isSelftext && (
+            <div className={isSinglePost ? "post-main-text-comments": "post-main-text-feed"}>
               <Markdown>{selftext}</Markdown>
             </div>
           )}
@@ -95,7 +95,7 @@ function Post({
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

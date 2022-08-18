@@ -3,7 +3,11 @@ import React, { useEffect } from "react";
 import Comment from "../Comment/Comment";
 import Post from "../Post/Post";
 import "./Comments.css";
-import { selectAllComments, loadComments, selectPostInfo } from "./CommentsSlice";
+import {
+  selectAllComments,
+  loadComments,
+  selectPostInfo,
+} from "./CommentsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { urlHelper } from "../../utils/urlHelper";
@@ -11,8 +15,8 @@ import { urlHelper } from "../../utils/urlHelper";
 function Comments() {
   const comments = useSelector(selectAllComments);
   const postInfo = useSelector(selectPostInfo);
-//   console.log(comments);
-//   console.log(postInfo);
+  //   console.log(comments);
+  //   console.log(postInfo);
   const { isLoading } = useSelector((state) => state.allComments);
   const params = useParams();
   //console.log(params);
@@ -25,24 +29,28 @@ function Comments() {
     dispatch(loadComments(url));
   }, [dispatch, params]);
 
-
   return (
-    <div>
-      <Post 
-        subreddit={postInfo.subreddit}
-        title={postInfo.title}
-        image={postInfo.url}
-        num_comments={postInfo.num_comments}
-        id={postInfo.id}
-        votes={postInfo.ups}
-        author={postInfo.author}
-        post_hint={postInfo.post_hint}
-        url={postInfo.url}
-        video_src={postInfo.secure_media?.reddit_video?.fallback_url}
-        comment_link={postInfo.permalink}
-        isSinglePost={true}
-        created={postInfo.created}
-    />
+    <section id="comment-page">
+      <div id='comment-post'>
+        <Post
+          subreddit={postInfo.subreddit}
+          title={postInfo.title}
+          image={postInfo.url}
+          num_comments={postInfo.num_comments}
+          id={postInfo.id}
+          votes={postInfo.ups}
+          author={postInfo.author}
+          post_hint={postInfo.post_hint}
+          url={postInfo.url}
+          video_src={postInfo.secure_media?.reddit_video?.fallback_url}
+          comment_link={postInfo.permalink}
+          isSinglePost={true}
+          created={postInfo.created}
+          isSelftext={postInfo.is_self}
+          selftext={postInfo.selftext}
+        />
+      </div>
+
       <div className="comments-container">
         {comments.map((comment) => (
           <Comment
@@ -53,7 +61,7 @@ function Comments() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

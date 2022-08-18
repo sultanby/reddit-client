@@ -1,4 +1,16 @@
+#comment-page {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+#comment-post {
+    width: 70%;
+    margin: 0 auto;
+}
+
 .comments-container {
+    display: block;
     width: 70%;
     margin: 0 auto;
 }

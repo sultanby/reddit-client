@@ -47,7 +47,7 @@ function AllPosts() {
           comment_link={post.data.permalink}
           created={post.data.created}
           isSinglePost={false}
-          isSelf={post.data.is_self}
+          isSelftext={post.data.is_self}
           selftext={post.data.selftext}
         />
       ))}
