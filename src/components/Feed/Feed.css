@@ -2,7 +2,7 @@
     display: grid;
     width: 70%;
     grid-template-columns: 550px auto;
-    grid-template-rows: 33px auto;
+    grid-template-rows: 35px auto;
     grid-template-areas:
     'filter sidebar'
     'main sidebar';
