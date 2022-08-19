@@ -15,8 +15,8 @@ import { urlHelper } from "../../utils/urlHelper";
 function Comments() {
   const comments = useSelector(selectAllComments);
   const postInfo = useSelector(selectPostInfo);
-    console.log(comments);
-    console.log(postInfo);
+  console.log(comments);
+  console.log(postInfo);
   const { isLoading } = useSelector((state) => state.allComments);
   const params = useParams();
   //console.log(params);
@@ -29,9 +29,18 @@ function Comments() {
     dispatch(loadComments(url));
   }, [dispatch, params]);
 
+  if (!isLoading) {
+    return (
+      <section id="comment-page">
+        <span className="loader"></span>
+      </section>
+      
+    )
+  }
+
   return (
     <section id="comment-page">
-      <div id='comment-post'>
+      <div id="comment-post">
         <Post
           subreddit={postInfo.subreddit_name_prefixed}
           title={postInfo.title}
@@ -53,16 +62,17 @@ function Comments() {
 
       <div className="comments-container">
         <h3>Comments</h3>
-        {comments.filter(comment => comment.data.author)
-                 .filter(comment => comment.data.body)
-                 .map((comment) => (
-          <Comment
-            author={comment.data.author}
-            body={comment.data.body}
-            created={comment.data?.created}
-            key={comment.data.id}
-          />
-        ))}
+        {comments
+          .filter((comment) => comment.data.author)
+          .filter((comment) => comment.data.body)
+          .map((comment) => (
+            <Comment
+              author={comment.data.author}
+              body={comment.data.body}
+              created={comment.data?.created}
+              key={comment.data.id}
+            />
+          ))}
       </div>
     </section>
   );

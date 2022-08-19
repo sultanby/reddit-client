@@ -25,7 +25,7 @@ function AllPosts() {
   
   if (isLoading) {
     return (
-      <span className="loader"></span>
+      <span className="egg-loader"></span>
     )
   }
 

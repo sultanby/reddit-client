@@ -14,6 +14,18 @@ function SubredditList() {
     dispatch(loadSubredditList());
   }, [dispatch]);
 
+  const { isLoading } = useSelector((state) => state.subredditList);
+
+  if (isLoading) {
+    return (
+      <div className='subreddit-list-container'>
+        <h4>Hottest Communities</h4>
+        <span className="loader"></span>
+      </div>
+      
+    )
+  }
+
   return (
     <div className="subreddit-list-container">
       <h4>Hottest Communities</h4>
