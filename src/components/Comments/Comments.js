@@ -29,7 +29,7 @@ function Comments() {
     dispatch(loadComments(url));
   }, [dispatch, params]);
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <section id="comment-page">
         <span className="loader"></span>
