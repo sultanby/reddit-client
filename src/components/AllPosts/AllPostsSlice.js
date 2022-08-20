@@ -16,7 +16,13 @@ export const loadPosts = createAsyncThunk(
         const data = await fetch(url, {
             headers: headers
           });
-        //console.log(data);
+
+        console.log(data);
+        if (!data.ok) {
+            console.log("hehe"+data.status);
+            throw Error(data.status);
+        }
+        
         const json = await data.json();
         return json.data.children;
     }
@@ -27,7 +33,8 @@ export const allPostsSlice = createSlice({
     initialState: {
         posts: [],
         isLoading: false,
-        hasError: false
+        hasError: false,
+        error: ''
     },
     reducers: {},
     extraReducers: {
@@ -44,7 +51,8 @@ export const allPostsSlice = createSlice({
         },
         [loadPosts.rejected]: (state, action) => {
             state.isLoading = false;
-            //console.log(action);
+            console.log(action.error.message);
+            state.error = action.error.message;
             state.hasError = true;
         }
     }

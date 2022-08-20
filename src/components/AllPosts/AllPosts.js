@@ -2,16 +2,17 @@ import React, { useEffect } from "react";
 // import { allPosts } from '../../mocks/posts';
 import "./AllPosts.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { loadPosts, selectFilteredAllPosts } from "./AllPostsSlice";
 import Post from "../Post/Post";
 import { urlHelper } from "../../utils/urlHelper";
 
+
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
   console.log(allPosts);
-  const { isLoading } = useSelector((state) => state.allPosts);
-  //console.log(isLoading);
+  const { isLoading, hasError, error } = useSelector((state) => state.allPosts);
+  console.log(error);
 
   const params = useParams();
   //console.log(params);
@@ -26,6 +27,19 @@ function AllPosts() {
   if (isLoading) {
     return (
       <span className="egg-loader"></span>
+    )
+  }
+
+  if (hasError) {
+    if (error==='404'){
+      return (
+        <Redirect to='/page-not-found' />
+      )
+    } else
+    return (
+      <div className="all-posts-container">
+        Something went wrong, try again later (code {error})
+      </div>
     )
   }
 

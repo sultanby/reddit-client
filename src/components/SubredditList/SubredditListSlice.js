@@ -39,7 +39,7 @@ export const subredditListSlice = createSlice({
         },
         [loadSubredditList.rejected]: (state, action) => {
             state.isLoading = false;
-            //console.log(action);
+            console.log(action.error);
             state.hasError = true;
         }
     }

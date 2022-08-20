@@ -9,7 +9,7 @@ import {
   selectPostInfo,
 } from "./CommentsSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { urlHelper } from "../../utils/urlHelper";
 
 function Comments() {
@@ -17,7 +17,7 @@ function Comments() {
   const postInfo = useSelector(selectPostInfo);
   console.log(comments);
   console.log(postInfo);
-  const { isLoading } = useSelector((state) => state.allComments);
+  const { isLoading, hasError, error } = useSelector((state) => state.allComments);
   const params = useParams();
   //console.log(params);
 
@@ -35,6 +35,19 @@ function Comments() {
         <span className="loader"></span>
       </section>
       
+    )
+  }
+
+  if (hasError) {
+    if (error==='404'){
+      return (
+        <Redirect to='/page-not-found' />
+      )
+    } else
+    return (
+      <div className="all-posts-container">
+        Something went wrong, try again later (code {error})
+      </div>
     )
   }
 

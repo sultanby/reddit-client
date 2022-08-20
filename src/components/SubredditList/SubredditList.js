@@ -14,7 +14,7 @@ function SubredditList() {
     dispatch(loadSubredditList());
   }, [dispatch]);
 
-  const { isLoading } = useSelector((state) => state.subredditList);
+  const { isLoading, hasError} = useSelector((state) => state.subredditList);
 
   if (isLoading) {
     return (
@@ -23,6 +23,15 @@ function SubredditList() {
         <span className="loader"></span>
       </div>
       
+    )
+  }
+
+  if (hasError) {
+    return (
+      <div className="subreddit-list-container">
+        <h4>Hottest Communities</h4>
+        Something went wrong, try again later
+      </div>
     )
   }
 

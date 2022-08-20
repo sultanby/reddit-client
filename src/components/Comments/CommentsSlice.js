@@ -11,7 +11,12 @@ export const loadComments = createAsyncThunk(
         const data = await fetch(url, {
             headers: headers
           });
-        //console.log(data);
+
+        console.log(data);
+        if (!data.ok) {
+            //console.log("hehe"+data.status);
+            throw Error(data.status);
+        }
         const json = await data.json();
         return json;
     }
@@ -23,7 +28,8 @@ export const commentsSlice = createSlice({
         comments: [],
         post: {},
         isLoading: false,
-        hasError: false
+        hasError: false,
+        error: ''
     },
     reducers: {},
     extraReducers: {
@@ -35,14 +41,15 @@ export const commentsSlice = createSlice({
         [loadComments.fulfilled]: (state, action) => {
             state.comments = action.payload[1].data.children;
             state.post = action.payload[0].data.children[0].data;
-            console.log(state.post);
-            console.log(state.comments);
+            //console.log(state.post);
+            //console.log(state.comments);
             state.isLoading = false;
             state.hasError = false;
         },
         [loadComments.rejected]: (state, action) => {
             state.isLoading = false;
-            //console.log(action);
+            //console.log(action.error.message);
+            state.error = action.error.message;
             state.hasError = true;
         }
     }

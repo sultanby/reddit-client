@@ -1,0 +1,27 @@
+.not-found {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    color: gray;
+}
+
+.not-found  h4{
+    padding-top: 20px;
+}
+
+.not-found h3:hover {
+    font-weight: 900;
+    color: black;
+}
+
+
+.not-found h3 {
+    padding-top: 40px;
+    color: gray;
+}
+
+
+
