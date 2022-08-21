@@ -29,13 +29,13 @@
     transition: all .35s;
 }
 
-button span,
-button img {
+.filter-bar button span,
+.filter-bar button img {
     position: relative;
     z-index: 2;
 }
 
-button:after {
+.filter-bar button:after {
     position: absolute;
     content: "";
     top: 0;
@@ -47,6 +47,6 @@ button:after {
     border-radius: 0.2rem;
 }
 
-button:hover:after {
+.filter-bar button:hover:after {
     width: 100%;
 }
