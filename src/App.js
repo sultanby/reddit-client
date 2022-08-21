@@ -9,7 +9,7 @@ import ScrollToTop from "react-scroll-to-top";
 function App() {
   return (
     <>
-    <ScrollToTop />
+      <ScrollToTop />
       <Header />
       <div id="main">
         <Switch>
