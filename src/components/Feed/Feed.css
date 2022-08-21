@@ -31,3 +31,21 @@
     grid-gap: 30px ;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 768px){
+    #feed-container {
+        width: 90%;
+    }
+    #home-grid {
+        grid-template-columns: auto;
+        grid-template-rows: 150px 35px auto;
+        grid-template-areas:
+        'sidebar'
+        'filter'
+        'main';
+    }
+    #feed-container header{
+        font-size: 1.5rem;
+        padding: 20px 0;
+    }
+}

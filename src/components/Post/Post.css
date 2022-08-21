@@ -50,10 +50,6 @@
     height: 50px;
 }
 
-.post-main-text-comments {
-    
-}
-
 .post-container {
     overflow-wrap: anywhere;
 }
@@ -89,4 +85,24 @@
 
 .post-main h6 {
     font-family: MontserratBold;
+}
+
+
+@media screen and (max-width: 768px){
+    .post-container {
+        flex-direction: column-reverse;
+    }
+
+    .votes-sidepanel {
+        flex-direction: row;
+        width: 100%;
+        border-bottom-left-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+        border-top-left-radius: 0;
+        border-right: none;
+        border-top: 1px solid gray;
+    }
+    .post-main {
+        width: 90%;
+    }
 }
