@@ -6,7 +6,7 @@
 }
 
 .down-section h6 {
-    color: #333;
+    color: gray;
 }
 
 .comment-button {
@@ -30,6 +30,10 @@
     border: 1px solid black;
 }
 
+.post-content a{
+    text-decoration: underline;
+    color: #457397;
+}
 
 /* .post-container:hover {
     -webkit-box-shadow: 33px 26px 60px -35px rgba(0,0,0,0.75);
