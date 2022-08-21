@@ -15,8 +15,8 @@ import { urlHelper } from "../../utils/urlHelper";
 function Comments() {
   const comments = useSelector(selectAllComments);
   const postInfo = useSelector(selectPostInfo);
-  console.log(comments);
-  console.log(postInfo);
+  // console.log(comments);
+  // console.log(postInfo);
   const { isLoading, hasError, error } = useSelector((state) => state.allComments);
   const params = useParams();
   //console.log(params);

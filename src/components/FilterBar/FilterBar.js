@@ -32,10 +32,10 @@ function FilterBar() {
     <div className="filter-bar">
       {filters.map((filter) => {
         if (params.subreddit && path==="/r/:subreddit/") 
-          return <Link to={`${url}/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/>{filter.type}</button></Link>
+          return <Link to={`${url}/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/><span>{filter.type}</span></button></Link>
         else if (Object.keys(params).length === 2)
-            return <Link to={`/${url_help}/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/>{filter.type}</button></Link>
-        return <Link to={`/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/>{filter.type}</button></Link>
+            return <Link to={`/${url_help}/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/><span>{filter.type}</span></button></Link>
+        return <Link to={`/${filter.type}`} key={filter.index}><button><img src={filter.src} alt='filter icon'/><span>{filter.type}</span></button></Link>
     })}
     </div>
   );

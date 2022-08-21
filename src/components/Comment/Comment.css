@@ -3,6 +3,9 @@
     margin-bottom: 5px;
     padding: 20px;
     overflow-wrap: anywhere;
+    background-color: #fdfcfb;
+    border-radius: 0.2rem;
+    border: 1px solid black;
 }
 
 .comment-container h6 {
@@ -15,4 +18,5 @@
     font-weight: bold;
     font-size: 0.75rem;
     padding-bottom: 10px;
+    font-family: MontserratBold;
 }

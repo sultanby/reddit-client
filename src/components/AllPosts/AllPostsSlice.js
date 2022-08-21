@@ -51,7 +51,7 @@ export const allPostsSlice = createSlice({
         },
         [loadPosts.rejected]: (state, action) => {
             state.isLoading = false;
-            console.log(action.error.message);
+            //console.log(action.error.message);
             state.error = action.error.message;
             state.hasError = true;
         }

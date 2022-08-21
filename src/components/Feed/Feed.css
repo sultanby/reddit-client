@@ -1,3 +1,8 @@
+@font-face {
+    font-family: BlackMango;
+    src: url(../../assets/fonts/BlackMango/BlackMango-Medium.otf);
+  }
+
 #feed-container {
     padding-top: 90px;
     width: 60%;
@@ -6,12 +11,14 @@
 
 #feed-container header{
     text-align: center;
-    font-size: large;
+    font-size: 2rem;
     padding: 30px 0;
-    background-color: bisque;
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
     width: 100%;
     margin: 0 auto 20px auto;
-    border: 1px solid gray;
+    font-family: BlackMango;
+    border: 1px solid black;
+    border-radius: 0.2rem;
 }
 
 #home-grid {

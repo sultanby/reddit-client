@@ -7,13 +7,17 @@
     align-items: center;
     border-bottom: 1px solid gray;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: #fdfcfb;
     opacity: 1;
+    -webkit-box-shadow: 0px 23px 77px -29px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 23px 77px -29px rgba(0,0,0,0.75);
+    box-shadow: 0px 23px 77px -29px rgba(0,0,0,0.75);
 }
 
 .logo-content {
     display: flex;
     align-items: center;
+    font-family: MontserratBold;
 }
 
 .logo-content img {

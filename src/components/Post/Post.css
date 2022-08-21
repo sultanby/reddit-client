@@ -6,7 +6,7 @@
 }
 
 .down-section h6 {
-    color: gray;
+    color: #333;
 }
 
 .comment-button {
@@ -20,13 +20,22 @@
 }
 
 .post-container {
-    border: 1px solid gray;
     margin-bottom: 20px;
     outline: none;
     display: flex;
     flex-direction: row;
     width: 100%;
+    background-color: #fdfcfb;
+    border-radius: 0.2rem;
+    border: 1px solid black;
 }
+
+
+/* .post-container:hover {
+    -webkit-box-shadow: 33px 26px 60px -35px rgba(0,0,0,0.75);
+    -moz-box-shadow: 33px 26px 60px -35px rgba(0,0,0,0.75);
+    box-shadow: 33px 26px 60px -35px rgba(0,0,0,0.75);
+} */
 
 .post-container img,
 .post-container video {
@@ -56,6 +65,9 @@
     padding: 10px 0;
     border-right: 1px solid gray;
     width: 35px;
+    background-color: #e9e9e7;
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
 }
 
 .votes-sidepanel div {
@@ -72,4 +84,9 @@
 
 .post-main h3 {
     padding: 15px 0;
+    font-family: Montserrat;
+}
+
+.post-main h6 {
+    font-family: MontserratBold;
 }

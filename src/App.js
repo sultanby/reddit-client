@@ -10,27 +10,28 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route path={"/page-not-found"}>
-          <PageNotFound />
-        </Route>
-        <Route path={"/r/:subreddit/comments/:id/:title"}>
-          <Comments />
-        </Route>
-        <Route path={"/r/:subreddit/:filter"}>
-          <Feed />
-        </Route>
-        <Route path={"/r/:subreddit/"}>
-          <Feed />
-        </Route>
-        <Route path={"/:filter"}>
-          <Feed />
-        </Route>
-        <Route exact path="/">
-          <Feed />
-        </Route>
-        
-      </Switch>
+      <div id="main">
+        <Switch>
+          <Route path={"/page-not-found"}>
+            <PageNotFound />
+          </Route>
+          <Route path={"/r/:subreddit/comments/:id/:title"}>
+            <Comments />
+          </Route>
+          <Route path={"/r/:subreddit/:filter"}>
+            <Feed />
+          </Route>
+          <Route path={"/r/:subreddit/"}>
+            <Feed />
+          </Route>
+          <Route path={"/:filter"}>
+            <Feed />
+          </Route>
+          <Route exact path="/">
+            <Feed />
+          </Route>
+        </Switch>
+      </div>
     </>
   );
 }

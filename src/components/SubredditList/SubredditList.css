@@ -1,13 +1,16 @@
 .subreddit-list-container {
     overflow-x: hidden;
     padding: 20px;
-    border: 1px solid black;
     grid-area: sidebar;
-    height: 800px;
+    height: 790px;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
 .subreddit-list-container h4 {
     padding-bottom: 20px;
+    font-family: MontserratBold;
 }
 
 .loader {
