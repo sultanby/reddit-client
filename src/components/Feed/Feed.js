@@ -10,7 +10,7 @@ function Feed() {
   return (
     <div id='feed-container'>
         {params.subreddit ? <header>welcome to r/{params.subreddit}</header> : null}
-      <div id="home-grid">
+      <div id="home-grid" data-testid='feed'>
         <FilterBar />
         <AllPosts />
         <SubredditList />
