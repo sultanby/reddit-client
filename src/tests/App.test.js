@@ -47,7 +47,7 @@ test("full header rendering", async () => {
   expect(screen.getByRole("textbox")).toBeInTheDocument();
 });
 
-test("landing on a bad page", async () => {
+test("renders PageNotFound", async () => {
   customRender(<PageNotFound />);
   //const user = userEvent.setup();
   // verify page content for expected route

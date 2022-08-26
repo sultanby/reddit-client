@@ -10,12 +10,9 @@ import { urlHelper } from "../../utils/urlHelper";
 
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
-  console.log(allPosts);
   const { isLoading, hasError, error } = useSelector((state) => state.allPosts);
-  console.log(error);
 
   const params = useParams();
-  //console.log(params);
 
   const dispatch = useDispatch();
 
