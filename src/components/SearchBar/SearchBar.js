@@ -27,7 +27,7 @@ function SearchBar() {
                 
             />
             {searchTerm.length > 0 && (
-                <img src={clear} id='clear-button' onClick={onSearchClearHandler} type='button'></img>
+                <img src={clear} id='clear-button' onClick={onSearchClearHandler} type='button' alt='clear icon'></img>
             )}
         </div>
      );

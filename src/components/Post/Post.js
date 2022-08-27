@@ -67,7 +67,7 @@ function Post({
           {post_hint === "link" && <a href={url}>{url}</a>}
           {post_hint === "hosted:video" && (
             <video width="300px" controls>
-              <source src={video_src} type="video/mp4"></source>
+              <source src={video_src} type="video/mp4" ></source>
             </video>
           )}
 

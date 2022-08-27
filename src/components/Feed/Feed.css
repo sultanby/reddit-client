@@ -24,11 +24,12 @@
 #home-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 35px auto;
+    grid-template-rows: 50px auto max-content;
     grid-template-areas:
     'filter sidebar'
-    'main sidebar';
-    grid-gap: 30px ;
+    'main sidebar'
+    'main .';
+    grid-gap: 30px 60px;
     margin: 0 auto;
 }
 
@@ -38,7 +39,7 @@
     }
     #home-grid {
         grid-template-columns: auto;
-        grid-template-rows: 150px 35px auto;
+        grid-template-rows: 150px 50px auto;
         grid-template-areas:
         'sidebar'
         'filter'

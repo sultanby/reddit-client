@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.comment-button h6{
+    color: black;
+    font-weight: 200;
+}
+
 .comment-button img {
     width: 18px;
     padding-right: 2px;
@@ -28,6 +33,7 @@
     background-color: #fdfcfb;
     border-radius: 0.2rem;
     border: 1px solid black;
+    overflow-wrap: anywhere;
 }
 
 .post-content a{
@@ -44,7 +50,7 @@
 .post-container img,
 .post-container video {
     display: block;
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
     margin: 0 auto;
 }
@@ -54,12 +60,9 @@
     height: 50px;
 }
 
-.post-container {
-    overflow-wrap: anywhere;
-}
-
 .votes-sidepanel {
     display: flex;
+    font-weight: bold;
     flex-direction: column;
     align-items: center;
     padding: 10px 0;

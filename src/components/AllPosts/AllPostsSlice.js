@@ -47,7 +47,7 @@ export const allPostsSlice = createSlice({
     [loadPosts.fulfilled]: (state, action) => {
         //console.log('mojfull', action.payload);
       state.posts = action.payload;
-      //console.log(state.posts);
+      console.log(state.posts);
       state.isLoading = false;
       state.hasError = false;
     },
