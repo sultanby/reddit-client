@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { getByRole, render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Router } from "react-router-dom";
@@ -10,6 +9,7 @@ import { Provider } from "react-redux";
 import PageNotFound from "../components/PageNotFound/PageNotFound";
 import App from "../App";
 import Feed from "../components/Feed/Feed";
+import Comments from "../components/Comments/Comments";
 
 export function customRender(
   ui,
@@ -36,9 +36,6 @@ test("can render App with redux and router", async () => {
 
 test("full header rendering", async () => {
   customRender(<Header />);
-  //const user = userEvent.setup();
-  // verify page content for expected route
-  // often you'd use a data-testid or role query, but this is also possible
   expect(screen.getByText(/minireddit/i)).toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: "reddit logo minireddit" })
@@ -49,13 +46,15 @@ test("full header rendering", async () => {
 
 test("renders PageNotFound", async () => {
   customRender(<PageNotFound />);
-  //const user = userEvent.setup();
-  // verify page content for expected route
-  // often you'd use a data-testid or role query, but this is also possible
   expect(screen.getByText(/Page Not Found/i)).toBeInTheDocument();
 });
 
 test("rendering feed", async () => {
   customRender(<Feed />);
   expect(screen.getByTestId("feed")).toBeInTheDocument();
+});
+
+test("rendering comments", async () => {
+  customRender(<Comments />);
+  expect(screen.getByTestId("comments")).toBeInTheDocument();
 });

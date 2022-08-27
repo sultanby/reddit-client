@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 let headers = {
-    "User-Agent"   : "codecademt:go:v2.1 (by /u/sultan)"
+    //"User-Agent"   : "codecademt:go:v2.1 (by /u/sultan)"
 };
 
 

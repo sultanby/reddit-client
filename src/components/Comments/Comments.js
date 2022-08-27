@@ -15,23 +15,18 @@ import { urlHelper } from "../../utils/urlHelper";
 function Comments() {
   const comments = useSelector(selectAllComments);
   const postInfo = useSelector(selectPostInfo);
-  // console.log(comments);
-  // console.log(postInfo);
   const { isLoading, hasError, error } = useSelector((state) => state.allComments);
   const params = useParams();
-  //console.log(params);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     let url = urlHelper({ params });
-    //console.log(url);
     dispatch(loadComments(url));
   }, [dispatch, params]);
 
   if (isLoading) {
     return (
-      <section id="comment-page">
+      <section id="comment-page" data-testid='comments'>
         <span className="loader"></span>
       </section>
       
@@ -45,14 +40,14 @@ function Comments() {
       )
     } else
     return (
-      <div className="all-posts-container">
+      <div className="all-posts-container" data-testid='comments'>
         Something went wrong, try again later (code {error})
       </div>
     )
   }
 
   return (
-    <section id="comment-page">
+    <section id="comment-page" data-testid='comments'>
       <div id="comment-post">
         <Post
           subreddit={postInfo.subreddit_name_prefixed}
