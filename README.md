@@ -1,5 +1,7 @@
 # Minireddit
 
+---
+
 This project was build off-platform for Full Stack Engineer Path on Codecademy. The project objective is to build Reddit-like app, which allows users to view and search posts and read comments provided by [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) using React and Redux technologies. Reddit is a website where people share links to articles, media and other things on the web. See project [requirements](https://github.com/sultanby/reddit-client/blob/main/documents/requirements.md)
 
 [LIVE DEMO](https://minireddit-sultanby.surge.sh)
@@ -40,25 +42,30 @@ Launches the test runner in the interactive watch mode.\
 
 ## Route Paths
 
+```
 /
+```
+lands on most popular reddits
 
-- lands on most popular reddits
-
+```
 /:filter
+```
+filters popular by given filters 
 
-- filters popular by given filters 
-
+```
 /r/:subreddit/
+```
+lands on subreddit page
 
-- lands on subreddit page
-
+```
 /r/:subreddit/:filter
+```
+filters subreddit by given filter
 
-- filters subreddit by given filter
-
+```
 /r/:subreddit/comments/:id/:title
-
-- lands on given post with comments
+```
+lands on given post with comments
 
 
 ## Features
