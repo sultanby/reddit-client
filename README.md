@@ -1,7 +1,5 @@
 # Minireddit
 
----
-
 This project was build off-platform for Full Stack Engineer Path on Codecademy. The project objective is to build Reddit-like app, which allows users to view and search posts and read comments provided by [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) using React and Redux technologies. Reddit is a website where people share links to articles, media and other things on the web. See project [requirements](https://github.com/sultanby/reddit-client/blob/main/documents/requirements.md)
 
 [LIVE DEMO](https://minireddit-sultanby.surge.sh)
@@ -23,7 +21,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Available Scripts
 
 To try this project on your local machine, after cloning repository into your local directory, in the project directory you can run:
-#### `npm install` and
+#### `npm install` 
+and
 #### `npm run start`
 
 Runs the app in the development mode.\
