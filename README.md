@@ -75,6 +75,10 @@ lands on given post with comments
 - Up- and downvote (locally)
 - Filter subreddit's posts
 
+## Lighthouse Score
+
+![Lighthouse Score](https://github.com/sultanby/reddit-client/blob/main/documents/Lighthouse.png)
+
 ## Future work
 
 - add more semantic elements
