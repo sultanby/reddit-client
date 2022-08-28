@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Minireddit
+
+This project was build off-platform for Full Stack Engineer Path on Codecademy. The project objective is to build Reddit-like app, which allows users to view and search posts and read comments provided by [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) using React and Redux technologies. Reddit is a website where people share links to articles, media and other things on the web. See project [requirements](https://github.com/sultanby/reddit-client/blob/main/documents/requirements.md)
+
+[LIVE DEMO](https://minireddit-sultanby.surge.sh)
+
+## Technologies
+- Command Line Interface
+- Git
+- React
+- Redux
+- Router
+- [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON)
+- React Testing Library
+- Surge
+
+## Setup
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
+To try this project on your local machine, after cloning repository into your local directory, in the project directory you can run:
+#### `npm install` and
+#### `npm run start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+#### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Wireframes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![wireframe](https://github.com/sultanby/reddit-client/blob/main/documents/wireframe.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Route Paths
 
-### `npm run eject`
+/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- lands on most popular reddits
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+/:filter
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- filters popular by given filters 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+/r/:subreddit/
 
-## Learn More
+- lands on subreddit page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+/r/:subreddit/:filter
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- filters subreddit by given filter
 
-### Code Splitting
+/r/:subreddit/comments/:id/:title
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- lands on given post with comments
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Features
 
-### Making a Progressive Web App
+- Select subreddit to view from today's top 25 subreddits
+- Search through posts in this subreddit
+- Comments page 
+- Up- and downvote (locally)
+- Filter subreddit's posts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future work
 
-### Advanced Configuration
+- add more semantic elements
+- optimize font sizes
+- search on whole reddit 
+- adding volume on videos
+- adding pagination
+- add back to feed button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

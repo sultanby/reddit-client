@@ -8,7 +8,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 function App() {
   return (
-    <div data-testid='main'>
+    <div data-testid="main">
       <ScrollToTop />
       <Header />
       <div id="main">

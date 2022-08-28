@@ -30,24 +30,22 @@ function Post({
   const [addend, setAddend] = useState(0);
 
   const changeUpVote = () => {
-    setAddend(prevAddend => (
-      prevAddend === 1 ? 0: addend+1))
-  }
+    setAddend((prevAddend) => (prevAddend === 1 ? 0 : addend + 1));
+  };
 
   const changeDownVote = () => {
-    setAddend(prevAddend => (
-      prevAddend === -1 ? 0: addend-1))
-  }
+    setAddend((prevAddend) => (prevAddend === -1 ? 0 : addend - 1));
+  };
 
   let time = timeConverter(created);
-  let voteRounded = voteCounter(votes+addend);
+  let voteRounded = voteCounter(votes + addend);
 
   return (
     <article className="post-container">
       <span className="votes-sidepanel">
         <img
           src={addend > 0 ? upPushed : up}
-          onClick={(changeUpVote)}
+          onClick={changeUpVote}
           alt="up vote button"
         />
         <div>{voteRounded}</div>
@@ -63,16 +61,20 @@ function Post({
         </h6>
         <h3>{title}</h3>
         <div className="post-content">
-          {post_hint === "image" && <img src={image} alt={title} />}
+          {post_hint === "image" && <img src={image} width="400px" alt={title} />}
           {post_hint === "link" && <a href={url}>{url}</a>}
           {post_hint === "hosted:video" && (
-            <video width="300px" controls>
-              <source src={video_src} type="video/mp4" ></source>
+            <video width="400px" controls>
+              <source src={video_src} type="video/mp4"></source>
             </video>
           )}
 
-          {isSelftext && selftext.length>0 && (
-            <div className={isSinglePost ? "post-main-text-comments": "post-main-text-feed"}>
+          {isSelftext && selftext.length > 0 && (
+            <div
+              className={
+                isSinglePost ? "post-main-text-comments" : "post-main-text-feed"
+              }
+            >
               <Markdown>{selftext}</Markdown>
             </div>
           )}

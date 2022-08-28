@@ -9,7 +9,9 @@ function PageNotFound({ error }) {
         Page Not Found :( <br />
       </h1>
       <h4>the page you requested does not exist</h4>
-      <Link to={"/"}> <h3> go to feed</h3></Link>
+      <Link to={"/"}>
+        <h3> go to feed</h3>
+      </Link>
     </div>
   );
 }

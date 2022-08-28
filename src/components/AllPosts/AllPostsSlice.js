@@ -5,23 +5,15 @@ let headers = {
   //"User-Agent": "codecademt:go:v2.1 (by /u/sultan)",
 };
 
-// let urlBase = 'https://api.reddit.com/r';
-// let SUBREDDIT_ALL = '/all/';
-// let JSON = '.json';
-
 export const loadPosts = createAsyncThunk(
   "allPosts/getAllPosts",
   async (url) => {
     const data = await fetch(url, {
       headers: headers,
     });
-
-    //console.log('mojdata',data);
     const json = await data.json();
-    //console.log("mojson: ", json);
 
     if (!data.ok) {
-      //console.log("hehe" + data.status);
       throw Error(data.status);
     }
 
@@ -41,19 +33,15 @@ export const allPostsSlice = createSlice({
   extraReducers: {
     [loadPosts.pending]: (state, action) => {
       state.isLoading = true;
-      //console.log(state.posts);
       state.hasError = false;
     },
     [loadPosts.fulfilled]: (state, action) => {
-        //console.log('mojfull', action.payload);
       state.posts = action.payload;
-      console.log(state.posts);
       state.isLoading = false;
       state.hasError = false;
     },
     [loadPosts.rejected]: (state, action) => {
       state.isLoading = false;
-      //console.log(action.error.message);
       state.error = action.error.message;
       state.hasError = true;
     },
@@ -67,7 +55,6 @@ export const selectFilteredAllPosts = (state) => {
   const searchTerm = selectSearchTerm(state);
 
   return allPosts.filter((post) => {
-    //console.log(searchTerm);
     return post.data.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
 };

@@ -7,7 +7,6 @@ import { loadPosts, selectFilteredAllPosts } from "./AllPostsSlice";
 import Post from "../Post/Post";
 import { urlHelper } from "../../utils/urlHelper";
 
-
 function AllPosts() {
   const allPosts = useSelector(selectFilteredAllPosts);
   const { isLoading, hasError, error } = useSelector((state) => state.allPosts);
@@ -20,24 +19,20 @@ function AllPosts() {
     let url = urlHelper({ params });
     dispatch(loadPosts(url));
   }, [dispatch, params]);
-  
+
   if (isLoading) {
-    return (
-      <span className="egg-loader"></span>
-    )
+    return <span className="egg-loader"></span>;
   }
 
   if (hasError) {
-    if (error==='404'){
-      return (
-        <Redirect to='/page-not-found' />
-      )
+    if (error === "404") {
+      return <Redirect to="/page-not-found" />;
     } else
-    return (
-      <div className="all-posts-container">
-        Something went wrong, try again later (code {error})
-      </div>
-    )
+      return (
+        <div className="all-posts-container">
+          Something went wrong, try again later (code {error})
+        </div>
+      );
   }
 
   return (

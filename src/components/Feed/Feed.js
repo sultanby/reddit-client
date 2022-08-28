@@ -8,9 +8,11 @@ import { useParams } from "react-router-dom";
 function Feed() {
   const params = useParams();
   return (
-    <div id='feed-container'>
-        {params.subreddit ? <header>welcome to r/{params.subreddit}</header> : null}
-      <div id="home-grid" data-testid='feed'>
+    <div id="feed-container">
+      {params.subreddit ? (
+        <header>welcome to r/{params.subreddit}</header>
+      ) : null}
+      <div id="home-grid" data-testid="feed">
         <FilterBar />
         <AllPosts />
         <SubredditList />

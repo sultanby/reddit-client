@@ -19,14 +19,15 @@
     padding: 20px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     #comment-page {
         width: 90%;
     }
+
     #comment-post {
         width: 100%;
     }
-    
+
     .comments-container {
         width: 100%;
     }

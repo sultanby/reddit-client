@@ -15,7 +15,9 @@ import { urlHelper } from "../../utils/urlHelper";
 function Comments() {
   const comments = useSelector(selectAllComments);
   const postInfo = useSelector(selectPostInfo);
-  const { isLoading, hasError, error } = useSelector((state) => state.allComments);
+  const { isLoading, hasError, error } = useSelector(
+    (state) => state.allComments
+  );
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -26,28 +28,25 @@ function Comments() {
 
   if (isLoading) {
     return (
-      <section id="comment-page" data-testid='comments'>
+      <section id="comment-page" data-testid="comments">
         <span className="loader"></span>
       </section>
-      
-    )
+    );
   }
 
   if (hasError) {
-    if (error==='404'){
-      return (
-        <Redirect to='/page-not-found' />
-      )
+    if (error === "404") {
+      return <Redirect to="/page-not-found" />;
     } else
-    return (
-      <div className="all-posts-container" data-testid='comments'>
-        Something went wrong, try again later (code {error})
-      </div>
-    )
+      return (
+        <div className="all-posts-container" data-testid="comments">
+          Something went wrong, try again later (code {error})
+        </div>
+      );
   }
 
   return (
-    <section id="comment-page" data-testid='comments'>
+    <section id="comment-page" data-testid="comments">
       <div id="comment-post">
         <Post
           subreddit={postInfo.subreddit_name_prefixed}

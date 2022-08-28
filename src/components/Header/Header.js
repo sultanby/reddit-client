@@ -10,7 +10,7 @@ function Header() {
       <Link to={"/"}>
         <div className="logo-content">
           <img src={logo} alt="reddit logo" />
-            <h3>minireddit</h3>
+          <h3>minireddit</h3>
         </div>
       </Link>
       <SearchBar />
