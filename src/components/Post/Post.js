@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import commentLogo from "../../assets/comments-24.png";
 import { timeConverter } from "../../utils/timeConverter";
 import { voteCounter } from "../../utils/votes";
 import "./Post.css";
 import Markdown from "markdown-to-jsx";
-import up from "../../assets/up-24.png";
-import upPushed from "../../assets/up-pushed-24.png";
-import down from "../../assets/down-24.png";
-import downPushed from "../../assets/down-pushed-24.png";
 
 function Post({
   subreddit,
@@ -44,13 +39,13 @@ function Post({
     <article className="post-container">
       <span className="votes-sidepanel">
         <img
-          src={addend > 0 ? upPushed : up}
+          src={addend > 0 ? 'https://img.icons8.com/external-those-icons-fill-those-icons/48/94f093/external-Up-interface-those-icons-fill-those-icons.png' : 'https://img.icons8.com/external-those-icons-lineal-those-icons/48/000000/external-Up-interface-those-icons-lineal-those-icons.png'}
           onClick={changeUpVote}
           alt="up vote button"
         />
         <div>{voteRounded}</div>
         <img
-          src={addend < 0 ? downPushed : down}
+          src={addend < 0 ? 'https://img.icons8.com/external-those-icons-fill-those-icons/48/E87D7D/external-Down-interface-those-icons-fill-those-icons.png' : 'https://img.icons8.com/external-those-icons-lineal-those-icons/48/000000/external-Down-interface-those-icons-lineal-those-icons-2.png'}
           onClick={changeDownVote}
           alt="down vote button"
         />
@@ -84,13 +79,13 @@ function Post({
           <h6>{time}</h6>
           {isSinglePost ? (
             <div className="comment-button">
-              <img src={commentLogo} alt="comment icon" />
+              <img src='https://img.icons8.com/ios/50/000000/comments.png' alt="comment icon" />
               <h6>{num_comments}</h6>
             </div>
           ) : (
             <Link to={`${comment_link}`}>
               <div className="comment-button">
-                <img src={commentLogo} alt="comment icon" />
+                <img src='https://img.icons8.com/ios/50/000000/comments.png' alt="comment icon" />
                 <h6>{num_comments}</h6>
               </div>
             </Link>

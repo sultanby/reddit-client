@@ -1,26 +1,23 @@
 import React from "react";
 import { Link, useRouteMatch, useParams } from "react-router-dom";
 import "./FilterBar.css";
-import hotIcon from "../../assets/flame-24.png";
-import newIcon from "../../assets/new-24.png";
-import topIcon from "../../assets/top-24.png";
 
 function FilterBar() {
   const filters = [
     {
       index: 1,
       type: "hot",
-      src: hotIcon,
+      src: 'https://img.icons8.com/ios/50/000000/fire-element--v1.png',
     },
     {
       index: 2,
       type: "new",
-      src: newIcon,
+      src: 'https://img.icons8.com/ios/50/000000/new.png',
     },
     {
       index: 3,
       type: "top",
-      src: topIcon,
+      src: 'https://img.icons8.com/ios/50/000000/positive-dynamic.png',
     },
   ];
   let { path, url } = useRouteMatch();

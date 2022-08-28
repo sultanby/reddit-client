@@ -103,6 +103,10 @@
         border-top: 1px solid gray;
     }
 
+    .votes-sidepanel img{
+        width: 25px;
+    }
+
     .post-main {
         width: 90%;
     }
