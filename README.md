@@ -86,5 +86,11 @@ lands on given post with comments
 - search on whole reddit 
 - adding volume on videos
 - adding pagination
-- add back to feed button
+- add 'back to feed' button
+- image compressor for faster loading
 
+## Credits
+
+- [Loaders](https://cssloaders.github.io/)
+- [Gradients](https://cssgradient.io/gradient-backgrounds/)
+- [Fonts](https://www.fontspad.com)
